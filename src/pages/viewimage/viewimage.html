@@ -1,0 +1,27 @@
+<!--
+  Generated template for the ViewimagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bb-content">
+    <div #panel class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let item of images">
+            <div class="swiper-zoom-container">
+                <img [src]="item" class="swiper-lazy" (click)="viewImages()"/>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+</ion-content>

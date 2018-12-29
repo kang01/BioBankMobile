@@ -1,7 +1,16 @@
-<ion-header>
+<ion-header class="bb-content">
     <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
+      <button ion-button menuToggle mode="md">
+        <!-- <ion-icon name="menu">
+         
+        </ion-icon> -->
+        <ion-item class="pl-0 bb-avatar">
+          <ion-avatar item-start>
+            <img src="assets/imgs/112.jpg" style="width:30px;height:30px;">
+          </ion-avatar>
+          <h2>张三</h2>
+        </ion-item>
+        
       </button>
       <ion-title>样本库</ion-title>
       <ion-buttons right>
@@ -9,8 +18,66 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
-  <ion-content>
-      <button  ion-button block color="primary" (click)="openModal()">设备信息</button>
+  <ion-content >
+      <!-- <button  ion-button block color="primary" (click)="openModal()">设备信息</button> -->
+      <div id="container" style="background-color:#2A373F;"></div>
+
+      <div class="floor-show">
+        <ul>
+          <li
+            (click)="selectFloor(item.name)"
+            [ngClass]="{ 'color-green': item.name === selectedFloor }"
+            *ngFor="let item of floors"
+          >
+            <h4 class="text-center">{{ item.name }}</h4>
+          </li>
+        </ul>
+      </div>
+      <div class="info-show" [ngStyle]="{ bottom: topFlag ? '-240px' : '40px' }">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <h4 class="color-green">Summary</h4>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mt-30">
+            <ion-col class="text-center">
+                <h4>设备总量</h4>
+                <h4 class="color-yellow mt-20">50</h4>
+            </ion-col>
+            <ion-col class="text-center">
+                <h4>空间使用率</h4>
+                <h4 class="color-green mt-20">62%</h4>
+            </ion-col>
+            <ion-col class="text-center">
+                <h4>日报警次数</h4>
+                <h4 class="color-red mt-20">12</h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        
+        <!-- <div class=" mt-50">
+          <div class=" text-center">
+            
+          </div>
+          <div class="col text-center">
+            <h4>空间使用率</h4>
+            <h4 class="color-green mt-20">60%</h4>
+          </div>
+          <div class="col text-center">
+            <h4>日报警次数</h4>
+            <h4 class="color-red mt-20">12</h4>
+          </div>
+        </div> -->
+      </div>
+
+
+
+
+
+
   </ion-content>
 
  

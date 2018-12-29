@@ -1,26 +1,27 @@
+import { ViewpdfPage } from './../viewpdf/viewpdf';
 import { MonitoringPage } from './../monitoring/monitoring';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the EquipmentInfoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-equipment-info',
   templateUrl: 'equipment-info.html',
 })
 export class EquipmentInfoPage {
-  public event = {
-    month: '1990-02-19',
-    timeStarts: '07:43',
-    timeEnds: '1990-02-20'
+  selectedSegment= "1";
+  equipmentCode;
+  source;
+  options = {
+    title: 'My PDF'
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public params: NavParams,
+    ) {
+    console.log('UserId', params.get('equipmentCode'));
+    this.equipmentCode = params.get('equipmentCode');
+    this.source = params.get('source');
+    
   }
 
   ionViewDidLoad() {
@@ -28,6 +29,17 @@ export class EquipmentInfoPage {
   }
   buttonClick(){
     this.navCtrl.push(MonitoringPage)
+  }
+  segmentChanged(event){
+    console.log(event);
+  }
+  viewPdf1(){
+    // this.document.viewDocument('https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf', 'application/pdf', this.options)
+    // this.pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
+    this.navCtrl.push(ViewpdfPage,{pdfSrc:'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf'})
+  }
+  viewPdf2(){
+    this.navCtrl.push(ViewpdfPage,{pdfSrc:'assets/templates/BBIS.pdf'})
   }
 
 }

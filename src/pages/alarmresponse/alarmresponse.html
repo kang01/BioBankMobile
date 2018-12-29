@@ -1,0 +1,212 @@
+<ion-header>
+  <ion-navbar> <ion-title>报警信息</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content class="bb-content checkbox-blue-color">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">报警原因</ion-label> </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label class="color-blue">信号传输受阻 & 信号干扰</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label class="color-blue">监控设备故障</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label class="color-blue">冻存设备故障</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>人员 & 物体误入库区</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label>委托方进行样本操作</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">委托方</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>人员错误操作</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">误操作</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>其他原因</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="17"
+              placeholder="其他原因，最多255个字符..."
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">响应措施</ion-label> </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label>未处理，30分钟内自愈 & 报警解除</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>停止样本操作，设备恢复正常</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">停止时间</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD HH:mm"
+              pickerFormat="YYYY MM DD HH:mm"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>现场响应，设备恢复正常</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">处置时间</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD HH:mm"
+              pickerFormat="YYYY MM DD HH:mm"
+            ></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>其他措施</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="6"
+              placeholder="其他措施，最多255个字符..."
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item> <ion-label class="color-green">响应结果</ion-label>
+             </ion-item>
+             <ion-item>
+                <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+                <ion-label>报警已解除，监控恢复正常</ion-label>
+              </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">报警解除时间</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD HH:mm"
+              pickerFormat="YYYY MM DD HH:mm"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>后续的影响</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="6"
+              placeholder="最多255个字符，如果没有影响请留空..."
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card style="flex-direction: row;">
+         
+        <ion-col>
+            <ion-item> <ion-label class="color-green">样本转移记录</ion-label> </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">开始时间</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD HH:mm"
+              pickerFormat="YYYY MM DD HH:mm"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">原位置</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">转出样本量</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">转前温度</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item> <ion-label>&nbsp;</ion-label> </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">完成时间</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD HH:mm"
+              pickerFormat="YYYY MM DD HH:mm"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">新位置</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6 ">转入样本量</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">转后30min温度</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">备注</ion-label> </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="6"
+              placeholder="这里是备注，可以随便写点什么。字符控制在255个汉字以内……"
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of images; index as i">
+        <ion-card>
+          <ion-item>
+            <ion-label class="color-green">现场照片{{ i + 1 }}</ion-label>
+          </ion-item>
+          <ion-item style="height:120px;" text-center>
+            <img [src]="item" (click)="viewImages(i)" />
+            <!-- <div class="card-title">São Paulo</div> -->
+            <!-- <div class="card-subtitle">41 Listings</div> -->
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card text-center>
+          <ion-item> <ion-label class="color-green">拍照上传</ion-label> </ion-item>
+          <ion-item style="height:120px;" text-center>
+            <ion-icon
+              name="camera"
+              slot="icon-only"
+              (click)="takePicture()"
+              style="font-size: 10em;"
+            ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

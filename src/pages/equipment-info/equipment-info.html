@@ -13,7 +13,7 @@
 </ion-header> -->
 
 
-<ion-content padding>
+<!-- <ion-content padding>
     <div padding>
         <ion-segment [(ngModel)]="pet">
           <ion-segment-button value="1">
@@ -187,4 +187,347 @@
         </ion-item>
       
       </ion-list>
+</ion-content> -->
+<ion-header *ngIf="this.source">
+
+    <ion-navbar>
+      <ion-title>设备信息</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+<ion-content class="bb-content">
+  <ion-grid class="equipment-header">
+    <ion-row >
+      <ion-col col-4>
+        <div>
+          <h4 class="color-yellow fs60 over-ellipsis"stype="width:240px;height:70px;">{{ equipmentCode }}</h4>
+          <h6 class="">SN:1234567890123</h6>
+          <h6 class="">MO:906-ULTS</h6>
+          <h6 class="">TN:1234567890123</h6>
+          <h6 class="">ST:运行中</h6>
+        </div>
+      </ion-col>
+      <ion-col col-8 class="p-10">
+        <div class="equipment-chart"></div>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  <ion-segment [(ngModel)]="selectedSegment" mode="md" (ionChange)="segmentChanged($event)" class="bb-segment">
+      <ion-segment-button value="1">
+        使用情況
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        设备信息
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        附件
+      </ion-segment-button>
+      <ion-segment-button value="4">
+        报警
+      </ion-segment-button>
+    </ion-segment>
+  <div [ngSwitch]="selectedSegment" >
+    <div *ngSwitchCase="'1'">
+      
+      <ion-item  class="bb-item">
+        <ion-row>
+          <ion-col col-3>
+              <ngx-gauge [type]="'full'" 
+              [size]="90"
+              [thick]="8"
+              [value]="35" 
+                [append]="'%'">
+              </ngx-gauge>
+          </ion-col>
+          <ion-col col-9>
+            <ion-row>
+                <div>&nbsp;</div>
+            </ion-row>
+            <ion-row>
+             
+              <ion-col class="color-green">
+                  <h2>冻存区：S01</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <h6>空位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>占位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>盒子：100</h6>
+                </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item  class="bb-item">
+        <ion-row>
+          <ion-col col-3>
+              <ngx-gauge [type]="'full'" 
+              [size]="90"
+              [thick]="8"
+              [value]="80" 
+                [append]="'%'">
+              </ngx-gauge>
+          </ion-col>
+          <ion-col col-9 >
+              <ion-row>
+                  <div>&nbsp;</div>
+              </ion-row>
+            <ion-row>
+              <ion-col class="color-green">
+                  <h2>冻存区：S01</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <h6>空位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>占位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>盒子：100</h6>
+                </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item  class="bb-item">
+        <ion-row>
+          <ion-col col-3>
+              <ngx-gauge [type]="'full'" 
+              [size]="90"
+              [thick]="8"
+              [value]="50" 
+                [append]="'%'">
+              </ngx-gauge>
+          </ion-col>
+          <ion-col col-9 >
+              <ion-row>
+                  <div>&nbsp;</div>
+              </ion-row>
+            <ion-row>
+              <ion-col class="color-green">
+                  <h2>冻存区：S01</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <h6>空位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>占位：15</h6>
+                </ion-col>
+                <ion-col>
+                    <h6>盒子：100</h6>
+                </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+     
+    </div>
+    <div *ngSwitchCase="'2'">
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div><h6 class="color-yellow">设备编码</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">当前库位</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">设备状态</h6></div>
+                <div>运行中</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div><h6 class="color-yellow">设备型号</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">设备分组</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">设备归属</h6></div>
+                <div>运行中</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div><h6 class="color-yellow">温控探头</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">报警温度</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">工作温度</h6></div>
+                <div>运行中</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-8>
+                <div><h6 class="color-yellow">生产厂家</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col col-4>
+                <div><h6 class="color-yellow">联系电话</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div><h6 class="color-yellow">联系地址</h6></div>
+                <div>123456565</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div><h6 class="color-yellow">出厂日期</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">采购日期</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+              <ion-col>
+                <div><h6 class="color-yellow">启用日期</h6></div>
+                <div>运行中</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-4>
+                <div><h6 class="color-yellow">报废年限</h6></div>
+                <div>123456565</div>
+              </ion-col>
+              <ion-col col-4>
+                <div><h6 class="color-yellow">保养周期</h6></div>
+                <div>F1-22</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    </div>
+    <div *ngSwitchCase="'3'">
+        <ion-item (click)="viewPdf1()" class="bb-item">
+            <ion-row>
+              <ion-col col-3 class="text-center fs80">
+                  <ion-icon name="ios-clock"></ion-icon>
+              </ion-col>
+              <ion-col col-9 >
+                <ion-row>
+                    <div>&nbsp;</div>
+                </ion-row>
+                <ion-row class="color-green">
+                 
+                  <ion-col>
+                      <h2  ><a>新设备插电测试记录1.pdf</a> </h2>
+                  </ion-col>
+                  <ion-col class="text-right">
+                    2018-12-12
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
+                    </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            
+          </ion-item>
+        <ion-item (click)="viewPdf2()" class="bb-item">
+            <ion-row>
+              <ion-col col-3 class="text-center fs80">
+                  <ion-icon name="ios-clock" ></ion-icon>
+              </ion-col>
+              <ion-col col-9 >
+                <ion-row>
+                    <div>&nbsp;</div>
+                </ion-row>
+                <ion-row  class="color-green">
+                 
+                  <ion-col>
+                      <h2><a>新设备插电测试记录2.pdf</a> </h2>
+                  </ion-col>
+                  <ion-col class="text-right">
+                    2018-12-12
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
+                    </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            
+          </ion-item>
+    </div>
+    <div *ngSwitchCase="'4'">
+        <ion-item detail-push (click)="buttonClick()" class="bb-item">
+            <ion-row>
+              <ion-col col-3 class="text-center fs80">
+                  <ion-icon name="ios-clock" ></ion-icon>
+              </ion-col>
+              <ion-col col-9 >
+                <ion-row>
+                    <div>&nbsp;</div>
+                </ion-row>
+                <ion-row class="color-red">
+                 
+                  <ion-col>
+                      <h2>20181212 08:00 其他报警</h2>
+                  </ion-col>
+                  <ion-col class="text-right">
+                    未处理
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
+                    </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        <ion-item detail-push (click)="buttonClick()" class="bb-item">
+            <ion-row >
+              <ion-col col-3 class="text-center fs80">
+                  <ion-icon name="ios-clock"></ion-icon>
+              </ion-col>
+              <ion-col col-9 >
+                <ion-row>
+                    <div>&nbsp;</div>
+                </ion-row>
+                <ion-row class="color-red">
+                 
+                  <ion-col>
+                      <h2>20181212 08:00 其他报警</h2>
+                  </ion-col>
+                  <ion-col class="text-right">
+                    未处理
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
+                    </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+    </div>
+  </div>
+  
 </ion-content>

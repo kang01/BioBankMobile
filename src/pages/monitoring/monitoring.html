@@ -1,18 +1,170 @@
-<!--
-  Generated template for the MonitoringPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
+<ion-header class="bb-header">
   <ion-navbar>
-    <ion-title>monitoring</ion-title>
+    <ion-title>报警信息</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="alarmResponse()">
+        <ion-icon name="happy"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="bb-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">报警类型</ion-label> </ion-item>
+          <ion-item *ngFor="let t of types">
+            <ion-checkbox
+              color="secondary"
+              [(ngModel)]="t.isChecked"
+              
+            ></ion-checkbox>
+            <ion-label class="{{t.className}}">{{ t.label }}</ion-label>
+          </ion-item>
+          <!-- <ion-item>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label>超温报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>超温报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>消防报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>氧浓度报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+            <ion-label>超温报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>超温报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>消防报警</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox color="secondary"></ion-checkbox>
+            <ion-label>氧浓度报警</ion-label>
+          </ion-item> -->
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">报警概述</ion-label> </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">报告人</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">报警日期</ion-label>
+            <ion-datetime
+              displayFormat="YYYY-MM-DD"
+              pickerFormat="YYYY MM DD"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">报警时间</ion-label>
+            <ion-datetime
+              displayFormat="hh:mm"
+              pickerFormat="hh mm"
+            ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">当时温度</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">状态</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">响应人</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">响应时长</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+            <button
+              ion-button
+              outline
+              item-end
+              icon-start
+              (click)="alarmResponse()"
+            >
+              详情
+            </button>
+          </ion-item>
+          <ion-item>
+            <ion-label class="opacity6">样本转移</ion-label>
+            <ion-input type="text" value="" text-right></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label class="color-green">相关设备</ion-label>
+            <button ion-button outline item-end (click)="addEquipmentInfoModal()">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="6"
+              placeholder="相关设备……"
+              [(ngModel)]="equipmentCodeStr"
+              style="height:196px;"
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item> <ion-label class="color-green">备注</ion-label> </ion-item>
+          <ion-item>
+            <ion-textarea
+              rows="6"
+              placeholder="这里是备注，可以随便写点什么。字符控制在255个汉字以内……"
+            ></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of images; index as i">
+        <ion-card>
+          <ion-item>
+            <ion-label class="color-green">现场照片{{ i + 1 }}</ion-label>
+          </ion-item>
+          <ion-item style="height:120px;" text-center>
+            <img [src]="item" (click)="viewImages(i)" />
+            <!-- <div class="card-title">São Paulo</div> -->
+            <!-- <div class="card-subtitle">41 Listings</div> -->
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card text-center>
+          <ion-item> <ion-label class="color-green">拍照上传</ion-label> </ion-item>
+          <ion-item style="height:120px;" text-center>
+            <ion-icon
+              name="camera"
+              slot="icon-only"
+              (click)="takePicture()"
+              style="font-size: 10em;"
+            ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

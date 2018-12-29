@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title>viewpdf</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bb-content">
+    <pdf-viewer [src]="pdfSrc" 
+    [render-text]="true"
+    [original-size]="false"
+    [autoresize]="true"
+    [show-all]="true"
+    style="display: block;"
+  ></pdf-viewer>
+</ion-content>

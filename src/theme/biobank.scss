@@ -1,0 +1,129 @@
+$ion-text-color: #B7B7B7;
+$ion-content-color:#2A373F;
+$ion-header-color:#1F282F;
+$ion-color1:#66BF92;
+$ion-color2:#EEA927;
+$ion-color3:#FF4A39;
+$ion-color4:#53C7FD;
+$ion-color5:rgba(183,183,183,.3);
+.mt-50{
+    margin-top: 50px !important;
+}
+.mt-40{
+    margin-top: 40px !important;
+}
+.mt-20{
+    margin-top: 20px !important;
+}
+.mt-30{
+    margin-top: 30px !important;
+}
+.ml-10{
+    margin-left: 10px !important;
+}
+.ml-20{
+    margin-left: 20px !important;
+}
+.ml-30{
+    margin-left: 30px !important;
+}
+.p-10{
+    padding: 10px !important;
+}
+.pl-10{
+    padding-left: 10px !important;
+}
+
+.opacity6{
+    opacity: 0.6;
+}
+.color-yellow{
+    color:$ion-color2;
+}
+.color-green{
+    color:$ion-color1;
+}
+.color-red{
+    color:$ion-color3;
+}
+.color-blue{
+    color:$ion-color4;
+}
+.row{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+#ion-diagnostics-toast{
+    top:9px;
+}
+.bb-content.content{
+    background-color: $ion-content-color !important;
+    color: $ion-text-color !important;
+    .item-ios,.item-md{
+        color: $ion-text-color;
+        background-color: transparent;
+        .item-inner{
+            border-bottom: 2px solid $ion-header-color;
+        }
+        
+    }
+}
+.bb-avatar{
+    background-color: $ion-header-color !important;
+    color: $ion-text-color !important;
+    ion-avatar,.label.label-ios{
+        margin-top:-3px !important;
+        margin-right:0 !important;
+    }
+}
+.bb-segment.segment-md{
+    box-shadow: 1px -1px 5px rgba(255,255,255,.3);
+    background-color:$ion-header-color;
+}
+.bb-segment.segment-md .segment-button,
+.bb-segment.segment-md .segment-button.activated, 
+.bb-segment.segment-md .segment-button.segment-activated{
+    color: $ion-text-color;
+    border-right: 1px solid #000;
+}
+.bb-badge{
+    color:black !important;
+    margin-left: 6px;
+     margin-bottom:10px;
+     padding: 10px;
+}
+.over-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+// .bb-header{
+//     .toolbar {
+//         .toolbar-background{
+//             background-color: $ion-header-color !important;
+//         }
+//         .toolbar-title-ios{
+//             color: $ion-text-color;
+//         }
+//     }
+// }
+$toolbar-background:$ion-header-color;
+$toolbar-ios-title-text-color:$ion-text-color;
+$tabs-background:$ion-header-color;
+$tabs-ios-tab-color-active:$ion-color1;
+$card-ios-background-color:$ion-header-color;
+// $segment-button-ios-background-color:$ion-header-color;
+// $segment-button-ios-background-color-activated:$ion-color2;
+// $segment-button-md-background-color:$ion-header-color;
+// $segment-button-md-background-color-activated:$ion-color2;
+// $segment-button-md-text-color:$ion-text-color;
+$segment-button-md-border-color-activated:$ion-color2;
+$segment-button-ios-border-color-activated:$ion-color2;
+
+$searchbar-ios-background-color:$ion-text-color;
+$searchbar-ios-input-text-color:$ion-text-color;
+$searchbar-ios-input-background-color:$ion-text-color;
+$searchbar-ios-border-color:$ion-text-color;
+$searchbar-ios-input-search-icon-color:$ion-text-color;
+$searchbar-ios-input-placeholder-color:$ion-text-color;
+$searchbar-ios-input-clear-icon-color:$ion-text-color;

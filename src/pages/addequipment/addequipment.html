@@ -1,0 +1,64 @@
+<ion-content class="bb-content">
+  <ion-segment [(ngModel)]="selectedSegment" mode="md" class="bb-segment">
+    <ion-segment-button *ngFor="let item of floors" value="{{ item.id }}">
+      {{ item.name }}
+    </ion-segment-button>
+    <ion-segment-button value="99"> 其他 </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'1'">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-badge class="bb-badge"
+              *ngFor="let f of f1"
+              color="{{ f.isSelected ? 'blue2' : 'blue1' }}"
+              (click)="f.isSelected = !f.isSelected"
+            >
+              {{ f.name }}
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label class="color-green">相关设备</ion-label>
+                <button
+                  ion-button
+                  outline
+                  item-end
+                  icon-start
+                  (click)="finish()"
+                >
+                  完成
+                </button>
+              </ion-item>
+              <ion-item>
+                <ion-row>
+                    <ion-col>
+                      <div *ngFor="let selectedF of f1" style="float: left;">
+                        <span *ngIf="selectedF.isSelected">
+                            {{selectedF.name}},
+                        </span>
+                      </div>
+                      </ion-col>
+                </ion-row>
+                
+                  
+                <!-- <ion-textarea
+                  rows="10"
+                  placeholder="其他原因，最多255个字符..."
+                ></ion-textarea> -->
+              </ion-item>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div *ngSwitchCase="'2'">F2</div>
+    <div *ngSwitchCase="'3'">F3</div>
+    <div *ngSwitchCase="'4'">F4</div>
+    <div *ngSwitchCase="'99'">其他</div>
+  </div>
+</ion-content>

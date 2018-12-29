@@ -38,7 +38,9 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  blue1:       #54C7FD,
+  blue2:       #0076FE
 );
 
 
@@ -69,7 +71,8 @@ $colors: (
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-
+@import "node_modules/bootstrap/dist/css/bootstrap.min";
+// @import 'node_modules/swiper/dist/css/swiper.min.css';
 @import "ionic.theme.default";
 
 
@@ -80,9 +83,11 @@ $colors: (
 
 @import "ionic.ionicons";
 
+@import "biobank";
 
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+

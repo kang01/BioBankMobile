@@ -4,7 +4,7 @@ import { MonitoringPage } from './monitoring';
 
 @NgModule({
   declarations: [
-    MonitoringPage,
+    MonitoringPage
   ],
   imports: [
     IonicPageModule.forChild(MonitoringPage),
