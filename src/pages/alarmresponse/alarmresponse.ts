@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ViewimagePage } from '../viewimage/viewimage';
+import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 
 
 @IonicPage()
@@ -15,7 +16,8 @@ export class AlarmresponsePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public camera: Camera,
-    public actionSheetCtrl: ActionSheetController) {
+    public actionSheetCtrl: ActionSheetController,
+    private imagePicker: ImagePicker) {
   }
   images = ['assets/imgs/112.jpg','assets/imgs/113.jpg'];
   options: CameraOptions = {
@@ -39,6 +41,19 @@ export class AlarmresponsePage {
     }, (err) => {
      });
   }
+  getPicture(){
+    // 设置选项
+    const options: ImagePickerOptions = {
+      maximumImagesCount: 6,
+      quality: 50
+    };
+
+    this.imagePicker.getPictures(options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+          console.log('Image URI: ' + results[i]);
+      }
+    }, (err) => { });
+  }
   viewImages(i){
     this.navCtrl.push(ViewimagePage,{images:this.images,selectedImageIndex:i})
   }
@@ -54,8 +69,7 @@ export class AlarmresponsePage {
         },{
           text: '我的相册',
           handler: () => {
-            this.options.sourceType =this.camera.PictureSourceType.PHOTOLIBRARY
-            this.carmera()
+            this.getPicture()
           }
         },{
           text: '取消',

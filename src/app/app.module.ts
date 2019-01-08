@@ -24,6 +24,9 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { DocumentViewer } from '@ionic-native/document-viewer';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { IonicStorageModule } from '@ionic/storage';
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { EquipmentInfoPage } from '../pages/equipment-info/equipment-info';
@@ -114,6 +117,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Base64,
     ImagePicker,
     DocumentViewer,
+    File,
+    FileOpener,
+    FileTransfer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     // { 
     //   provide: HAMMER_GESTURE_CONFIG, 

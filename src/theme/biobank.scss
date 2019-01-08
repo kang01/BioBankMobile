@@ -6,6 +6,7 @@ $ion-color2:#EEA927;
 $ion-color3:#FF4A39;
 $ion-color4:#53C7FD;
 $ion-color5:rgba(183,183,183,.3);
+$ion-green-2:#8BC24A;
 .mt-50{
     margin-top: 50px !important;
 }
@@ -48,6 +49,9 @@ $ion-color5:rgba(183,183,183,.3);
 }
 .color-blue{
     color:$ion-color4;
+}
+.color-green-2{
+    color:$ion-green-2;
 }
 .row{
     padding: 0 !important;
@@ -127,3 +131,37 @@ $searchbar-ios-border-color:$ion-text-color;
 $searchbar-ios-input-search-icon-color:$ion-text-color;
 $searchbar-ios-input-placeholder-color:$ion-text-color;
 $searchbar-ios-input-clear-icon-color:$ion-text-color;
+
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ion-icon {
+    &[class*="custom-"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+    }
+  
+    &[class*="custom-pdf"] {
+      mask-image: url(../assets/imgs/pdf.svg);
+    }
+    &[class*="custom-jpg"] {
+      mask-image: url(../assets/imgs/jpg.svg);
+    }
+    &[class*="custom-png"] {
+      mask-image: url(../assets/imgs/png.svg);
+    }
+    &[class*="custom-whby"] {
+      mask-image: url(../assets/imgs/weihubaoyang.svg);
+    }
+    &[class*="custom-gwyj"] {
+      mask-image: url(../assets/imgs/gaowenyujing.svg);
+    }
+  
+  }

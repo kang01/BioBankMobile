@@ -1,193 +1,4 @@
-<!--
-  Generated template for the EquipmentInfoPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!-- <ion-header>
-
-  <ion-navbar>
-    <ion-title>equipmentInfo</ion-title>
-  </ion-navbar>
-
-</ion-header> -->
-
-
-<!-- <ion-content padding>
-    <div padding>
-        <ion-segment [(ngModel)]="pet">
-          <ion-segment-button value="1">
-            使用情况
-          </ion-segment-button>
-          <ion-segment-button value="2">
-            设备情况
-          </ion-segment-button>
-          <ion-segment-button value="3">
-            附件
-          </ion-segment-button>
-          <ion-segment-button value="4">
-            报警
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-      
-      <div [ngSwitch]="pet">
-        <ion-list *ngSwitchCase="'1'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-puppy-1.jpg">
-            </ion-thumbnail>
-            <h2>Ruby</h2>
-          </ion-item>
-          <button ion-item detail-none (click)="buttonClick()">
-              Button Item with no Detail Arrow
-            </button>
-            <ion-item>
-                <ion-label>Start Time</ion-label>
-                <ion-datetime displayFormat="YYYY-MM-DD h:mm" pickerFormat="YYYY-MM-DD h:mm" ></ion-datetime>
-              </ion-item>
-        </ion-list>
-      
-        <ion-list *ngSwitchCase="'2'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-kitten-1.jpg">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
-        </ion-list>
-        <ion-list *ngSwitchCase="'3'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-kitten-1.jpg">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
-        </ion-list>
-        <ion-list *ngSwitchCase="'4'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-kitten-1.jpg">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
-        </ion-list>
-      </div>
-
-
-
-    <ion-list>
-
-        <ion-list-header>
-          Header
-        </ion-list-header>
-      
-        <ion-item>
-          Item
-        </ion-item>
-      
-        <ion-item detail-push (click)="buttonClick()">
-          Item with Detail Arrow
-        </ion-item>
-      
-        <button ion-item (click)="buttonClick()">
-          Button Item
-        </button>
-      
-        <ion-item-divider>
-          Item Divider
-        </ion-item-divider>
-      
-       
-      
-       
-      
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-        <ion-item no-lines>
-          Item with no border
-        </ion-item>
-      
-        <ion-item text-wrap>
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
-        </ion-item>
-      
-      </ion-list>
-</ion-content> -->
 <ion-header *ngIf="this.source">
 
     <ion-navbar>
@@ -200,7 +11,7 @@
     <ion-row >
       <ion-col col-4>
         <div>
-          <h4 class="color-yellow fs60 over-ellipsis"stype="width:240px;height:70px;">{{ equipmentCode }}</h4>
+          <h4 class="color-yellow fs4em over-ellipsis"stype="width:240px;height:70px;">{{ equipmentCode }}</h4>
           <h6 class="">SN:1234567890123</h6>
           <h6 class="">MO:906-ULTS</h6>
           <h6 class="">TN:1234567890123</h6>
@@ -419,10 +230,11 @@
           </ion-grid>
     </div>
     <div *ngSwitchCase="'3'">
-        <ion-item (click)="viewPdf1()" class="bb-item">
+        <ion-item (click)="viewFile(file)" class="bb-item" *ngFor="let file of fileData">
             <ion-row>
-              <ion-col col-3 class="text-center fs80">
-                  <ion-icon name="ios-clock"></ion-icon>
+              <ion-col col-3 class="text-center fs4em flex-center color-green">
+                  <ion-icon name="custom-pdf"  *ngIf="file.type ==='pdf'"></ion-icon>
+                  <ion-icon name="custom-jpg" *ngIf="file.type ==='jpg'"></ion-icon>
               </ion-col>
               <ion-col col-9 >
                 <ion-row>
@@ -431,7 +243,7 @@
                 <ion-row class="color-green">
                  
                   <ion-col>
-                      <h2  ><a>新设备插电测试记录1.pdf</a> </h2>
+                      <h2  ><a>{{file.name}}</a> </h2>
                   </ion-col>
                   <ion-col class="text-right">
                     2018-12-12
@@ -439,46 +251,20 @@
                 </ion-row>
                 <ion-row>
                     <ion-col>
-                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
+                        <div>{{file.memo}}</div>
                     </ion-col>
                 </ion-row>
               </ion-col>
             </ion-row>
             
           </ion-item>
-        <ion-item (click)="viewPdf2()" class="bb-item">
-            <ion-row>
-              <ion-col col-3 class="text-center fs80">
-                  <ion-icon name="ios-clock" ></ion-icon>
-              </ion-col>
-              <ion-col col-9 >
-                <ion-row>
-                    <div>&nbsp;</div>
-                </ion-row>
-                <ion-row  class="color-green">
-                 
-                  <ion-col>
-                      <h2><a>新设备插电测试记录2.pdf</a> </h2>
-                  </ion-col>
-                  <ion-col class="text-right">
-                    2018-12-12
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <div>这里是备注这里是备注这里是备注这里是备注这里是备注这里是备注这里...</div>
-                    </ion-col>
-                </ion-row>
-              </ion-col>
-            </ion-row>
-            
-          </ion-item>
+        
     </div>
     <div *ngSwitchCase="'4'">
-        <ion-item detail-push (click)="buttonClick()" class="bb-item">
+        <ion-item detail-push (click)="goToMonitoring()" class="bb-item">
             <ion-row>
-              <ion-col col-3 class="text-center fs80">
-                  <ion-icon name="ios-clock" ></ion-icon>
+              <ion-col col-3 class="text-center fs4em color-red flex-center">
+                  <ion-icon name="custom-gwyj" ></ion-icon>
               </ion-col>
               <ion-col col-9 >
                 <ion-row>
@@ -501,19 +287,19 @@
               </ion-col>
             </ion-row>
           </ion-item>
-        <ion-item detail-push (click)="buttonClick()" class="bb-item">
+        <ion-item detail-push (click)="goToMonitoring()" class="bb-item">
             <ion-row >
-              <ion-col col-3 class="text-center fs80">
-                  <ion-icon name="ios-clock"></ion-icon>
+              <ion-col col-3 class="text-center fs4em color-green-2 flex-center">
+                  <ion-icon name="custom-whby"></ion-icon>
               </ion-col>
               <ion-col col-9 >
                 <ion-row>
                     <div>&nbsp;</div>
                 </ion-row>
-                <ion-row class="color-red">
+                <ion-row class="color-green-2">
                  
                   <ion-col>
-                      <h2>20181212 08:00 其他报警</h2>
+                      <h2>20181212 08:00 需要维护 & 维护</h2>
                   </ion-col>
                   <ion-col class="text-right">
                     未处理
